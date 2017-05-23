@@ -53,3 +53,11 @@ gulp.task('concat', () =>
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
 );
+
+// watch task
+gulp.task('watch', function(){
+    gulp.watch('src/js/*.js', ['concat']);
+    gulp.watch('src/sass/*.scss', ['sass']);
+    gulp.watch('src/images/*', ['imageMin']);
+    gulp.watch('src/*.html', ['copyHtml']);
+});
