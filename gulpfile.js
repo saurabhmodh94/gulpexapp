@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify');
 
 /*
     --- TOP LEVEL FUNCTIONS ---
@@ -29,4 +30,11 @@ gulp.task('imageMin', () =>
     gulp.src('src/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images'))
+);
+
+// Minify js files
+gulp.task('minify', () =>
+    gulp.src('src/js/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'))
 );
