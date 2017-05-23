@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
+const concat = require('gulp-concat');
 
 /*
     --- TOP LEVEL FUNCTIONS ---
@@ -17,7 +18,7 @@ gulp.task("message", function(){
 })
 
 // Default task
-gulp.task("default", ['message', 'copyHtml', 'imageMin', 'minify', 'sass'])
+gulp.task("default", ['message', 'copyHtml', 'imageMin', 'sass', 'concat'])
 
 // Copy all html files to dist folder
 gulp.task("copyHtml", function(){
@@ -43,4 +44,12 @@ gulp.task('sass', () =>
     gulp.src('src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist/css'))
+);
+
+// Concat scripts
+gulp.task('concat', () =>
+    gulp.src('src/js/*.js')
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'))
 );
