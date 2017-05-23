@@ -12,3 +12,8 @@ const gulp = require('gulp');
 gulp.task("message", function(){
     return console.log("Gulp is running....");
 })
+
+// Default task
+gulp.task("default", function(){
+    return console.log("default task....");
+})
