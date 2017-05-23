@@ -1,0 +1,20 @@
+ 1998  npm install gulp -g
+ 1997  mkdir gulpexapp
+ 1998  cd gulpexapp/
+ 1999  npm init
+ 2000  subl .
+ 2001  npm install --save-dev gulp
+ 2002  git init
+ 2009  atom .
+ 2014  code .
+
+ 2014  gulp copyHtml
+ 2015  npm install --save-dev gulp-imagemin
+ 2016  gulp imageMin
+ 2017  npm  install --save-dev gulp-uglify
+ 2018  gulp minify
+ 2019  npm  install --save-dev gulp-sass
+ 2020  gulp sass
+ 2025  npm  install --save-dev gulp-concat
+ 2026  gulp 
+ 2027  gulp watch
