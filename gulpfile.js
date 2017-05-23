@@ -17,9 +17,7 @@ gulp.task("message", function(){
 })
 
 // Default task
-gulp.task("default", function(){
-    return console.log("default task....");
-})
+gulp.task("default", ['message', 'copyHtml', 'imageMin', 'minify', 'sass'])
 
 // Copy all html files to dist folder
 gulp.task("copyHtml", function(){
